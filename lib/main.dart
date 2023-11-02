@@ -63,7 +63,7 @@ class TestButton extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
       width: double.infinity,
-      child: GestureDetector(
+      child: InkWell(
         onTap: () => print('Tab!'),
         child: Center(
           child: Container(
