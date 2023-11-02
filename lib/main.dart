@@ -69,6 +69,8 @@ class TestButton extends StatelessWidget {
       width: double.infinity,
       child: InkWell(
         onTap: () => callback.call(1),
+        onDoubleTap: () => callback.call(5),
+        onLongPress: () => callback.call(10),
         child: Center(
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
