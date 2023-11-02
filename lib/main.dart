@@ -54,13 +54,13 @@ class _TestWidgetState extends State<TestWidget> {
     );
   }
 
-  void addCounter() => setState(() => ++value);
+  void addCounter(int addValue) => setState(() => value = addValue + value);
 }
 
 class TestButton extends StatelessWidget {
   const TestButton(this.callback, {super.key});
 
-  final VoidCallback callback;
+  final Function(int) callback;
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +68,7 @@ class TestButton extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8),
       width: double.infinity,
       child: InkWell(
-        onTap: () => callback.call(),
+        onTap: () => callback.call(1),
         child: Center(
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
